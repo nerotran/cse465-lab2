@@ -38,7 +38,11 @@
 )
 
 (define (numzeros lst) ; fill this in
-    0
+    (cond
+    	( (null? lst) 0)
+    	( (= (cdr lst) 0) (+ 1 (numzeros (cdr lst))))
+    	(else (numzeros (cdr lst)))
+    )
 )
 
 (newline)
@@ -88,6 +92,12 @@
 
 (define (minandmax lst) ; fill this in. return (min, max)
     '(0 0)
+    (if (null? (cdr lst)) 
+    	(list (car lst) (cdr lst))
+    (let (mm (minandmax (cdr(lst))))
+    	(list (min (car lst) (car mm)) (max (car lst) (cadr mm)))
+    )
+
 )
 
 (newline)
@@ -100,7 +110,11 @@
 (define (zip lst1 lst2) ; fill this in
 ; input is two simple lists of same length: (1 2 3 4) (a b c d)
 ; returns ((1 a) (2 b) (3 c) (4 d))
-   '()
+	(cond
+		((null? ls1) '())
+		((null? ls2) '())
+		(else (cons (list (car lst1) (car lst2)) (zip (cdr lst1) (cdr lst2))))
+	)
 )
 
 (newline)
