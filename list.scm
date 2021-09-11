@@ -95,8 +95,8 @@
 
 (define (minandmax lst) ; fill this in. return (min, max)
     (cond 
-    	((null? (cdr lst)) (list (car lst) (cdr lst)))
-    	(else (cons (minelt lst) (cons (maxelt lst) '())))
+    	((null? (cdr lst)) (list (car lst) (car lst)))
+    	(else (list (minelt lst) (maxelt lst)))
     )
 
 )
