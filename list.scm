@@ -65,7 +65,10 @@
 (define (allbutlast lst) 
 	; complete. return original list, but without the last element
 	; lst should never be empty (no need to check for that)
-	'() 
+	(cond
+		( (null? (cdr lst) ) (cons (car lst) '()))
+		(else (cons (car lst) (cdr lst)))
+	) 
 )
 
 (newline)
