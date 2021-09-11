@@ -112,8 +112,8 @@
 ; input is two simple lists of same length: (1 2 3 4) (a b c d)
 ; returns ((1 a) (2 b) (3 c) (4 d))
 	(cond
-		((null? ls1) '())
-		((null? ls2) '())
+		((null? lst1) '())
+		((null? lst2) '())
 		(else (cons (list (car lst1) (car lst2)) (zip (cdr lst1) (cdr lst2))))
 	)
 )
