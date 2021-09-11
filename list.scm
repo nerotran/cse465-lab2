@@ -67,7 +67,7 @@
 	; lst should never be empty (no need to check for that)
 	(cond
 		( (null? (cdr lst) ) '())
-		(else (cons (car lst) allbutlast(cdr lst)))
+		(else (cons (car lst) (allbutlast (cdr lst))))
 	) 
 )
 
