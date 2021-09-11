@@ -40,7 +40,7 @@
 (define (numzeros lst) ; fill this in
     (cond
     	( (null? lst) 0)
-    	( (= (cdr lst) 0) (+ 1 (numzeros (cdr lst))))
+    	( (= (car lst) 0) (+ 1 (numzeros (cdr lst))))
     	(else (numzeros (cdr lst)))
     )
 )
