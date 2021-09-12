@@ -96,9 +96,8 @@
 (define (minandmax lst) ; fill this in. return (min, max)
     (if (null? (cdr lst)) 
     	(list (car lst) (cdr lst))
-    	(let (mm (minandmax (cdr(lst))))
-    		(list (min (car lst) (car mm)) (max (car lst) (cadr mm)))
-    	)
+    	(let ((mm (minandmax (cdr lst))))
+    		(list (min (car lst) (car mm)) (max (car lst) (cadr mm))))
     )
 
 )
